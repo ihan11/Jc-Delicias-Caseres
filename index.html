@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jc Delicias Caceres</title>
-  <link rel="website icon" type="jpg" href="imagenes/logo.jpg">
+  <link rel="website icon" type="image/jpg" href="imagenes/logo.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
@@ -12,26 +19,30 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
     }
 
     .card {
       background: white;
-      padding: 30px;
+      padding: 30px 20px;
       border-radius: 20px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-      max-width: 400px;
+      max-width: 90%;
+      width: 400px;
       text-align: center;
+      transition: opacity 0.8s ease;
     }
 
     .card img {
-      width: 50%;
+      width: 60%;
       border-radius: 15px;
+      margin-bottom: 20px;
     }
 
     h1 {
       color: #000000;
       margin-bottom: 10px;
+      font-size: 24px;
     }
 
     p {
@@ -48,10 +59,15 @@
       border-radius: 25px;
       font-weight: bold;
       transition: background-color 0.3s;
+      display: inline-block;
     }
 
     a.boton:hover {
       background-color: #2e2d2d;
+    }
+
+    .fade-out {
+      opacity: 0;
     }
   </style>
 </head>
@@ -60,9 +76,19 @@
   <div class="card">
     <img src="imagenes/logo.jpg" alt="Torta decorada">
     <h1>Jc Delicias Caceres</h1>
-    <p></p>
-    <a href="catalogo.html" class="boton">Ver catálogo</a>
+    <p>Tu dulzura en cada bocado</p>
+    <a href="#" class="boton" onclick="transicion()">Ver catálogo</a>
   </div>
+
+  <script>
+    function transicion() {
+      const card = document.querySelector('.card');
+      card.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = 'catalogo.html';
+      }, 800); // 800ms = mismo tiempo que la transición CSS
+    }
+  </script>
 
 </body>
 </html>
