@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Catálogo</title>
+  <link rel="website icon" type="jpg" href="imagenes/logo.jpg">  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .producto {
+      display: inline-block;
+      background: white;
+      margin: 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 200px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .producto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+    }
+
+    .producto h2 {
+      font-size: 18px;
+      margin: 10px 0 5px;
+    }
+
+    .producto p {
+      font-size: 14px;
+      font-family: 'Montserrat', sans-serif;
+      color: #555;
+    }
+
+    .producto button {
+      background: linear-gradient(to right, #000000, #434343);
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 16px;
+      margin: 10px 0 15px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .producto button:hover {
+      background: linear-gradient(to right, #434343, #000000);
+    }
+      @media (max-width: 600px) {
+    .producto {
+      width: 90%;
+      margin: 10px auto;
+      display: block;
+      }
+
+      #carrito {
+        width: 90%;
+      }
+    }
+
+    #carrito {
+      margin-top: 40px;
+      text-align: left;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #ffffff;
+      padding: 25px 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      font-size: 15px;
+    }
+
+    #carrito h2 {
+      margin-bottom: 15px;
+      font-size: 20px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 10px;
+    }
+
+    #lista-carrito {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #lista-carrito li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    #lista-carrito li:last-child {
+      border-bottom: none;
+    }
+
+    #lista-carrito .cantidad {
+      font-weight: bold;
+      color: #333;
+      margin-left: 5px;
+    }
+
+    #lista-carrito button {
+      background: transparent;
+      border: none;
+      color: #ff4d4f;
+      font-size: 18px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    #carrito p {
+      margin-top: 15px;
+      font-size: 16px;
+      text-align: right;
+      font-weight: bold;
+    }
+
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: sans-serif;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎂 Catálogo de Repostería</h1>
+
+  <div class="producto">
+    <img src="imagenes/descarga (1).jpeg" alt="Torta de fresa">
+    <h2>🍓 Torta de fresa</h2>
+    <p>$3.000</p>
+    <button onclick="agregarAlCarrito('Torta de fresa', 3000)">Agregar al carrito</button>
+  </div>
+
+  <div class="producto">
+    <img src="imagenes/descarga (2).jpeg" alt="Torta clásica">
+    <h2>🍰 Torta clásica</h2>
+    <p>$20.000</p>
+    <button onclick="agregarAlCarrito('Torta clásica', 20000)">Agregar al carrito</button>
+  </div>
+
+  <div class="producto">
+    <img src="imagenes/descarga.jpeg" alt="Torta de chocolate">
+    <h2>🍫 Torta de chocolate</h2>
+    <p>$2.000</p>
+    <button onclick="agregarAlCarrito('Torta de chocolate', 2000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga (1).jpeg" alt="Torta de fresa">
+    <h2>🍓 Torta de fresa</h2>
+    <p>$3.000</p>
+    <button onclick="agregarAlCarrito('Torta de fresa', 3000)">Agregar al carrito</button>
+  </div>
+
+  <div class="producto">
+    <img src="imagenes/descarga (2).jpeg" alt="Torta clásica">
+    <h2>🍰 Torta clásica</h2>
+    <p>$20.000</p>
+    <button onclick="agregarAlCarrito('Torta clásica', 20000)">Agregar al carrito</button>
+  </div>
+  <br>
+  <div class="producto">
+    <img src="imagenes/descarga.jpeg" alt="Torta de chocolate">
+    <h2>🍫 Torta de chocolate</h2>
+    <p>$2.000</p>
+    <button onclick="agregarAlCarrito('Torta de chocolate', 2000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga (1).jpeg" alt="Torta de fresa">
+    <h2>🍓 Torta de fresa</h2>
+    <p>$3.000</p>
+    <button onclick="agregarAlCarrito('Torta de fresa', 3000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga (2).jpeg" alt="Torta clásica">
+    <h2>🍰 Torta clásica</h2>
+    <p>$20.000</p>
+    <button onclick="agregarAlCarrito('Torta clásica', 20000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga.jpeg" alt="Torta de chocolate">
+    <h2>🍫 Torta de chocolate</h2>
+    <p>$2.000</p>
+    <button onclick="agregarAlCarrito('Torta de chocolate', 2000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga (1).jpeg" alt="Torta de fresa">
+    <h2>🍓 Torta de fresa</h2>
+    <p>$3.000</p>
+    <button onclick="agregarAlCarrito('Torta de fresa', 3000)">Agregar al carrito</button>
+  </div>
+  <br>
+  <div class="producto">
+    <img src="imagenes/descarga (2).jpeg" alt="Torta clásica">
+    <h2>🍰 Torta clásica</h2>
+    <p>$20.000</p>
+    <button onclick="agregarAlCarrito('Torta clásica', 20000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga.jpeg" alt="Torta de chocolate">
+    <h2>🍫 Torta de chocolate</h2>
+    <p>$2.000</p>
+    <button onclick="agregarAlCarrito('Torta de chocolate', 2000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga (1).jpeg" alt="Torta de fresa">
+    <h2>🍓 Torta de fresa</h2>
+    <p>$3.000</p>
+    <button onclick="agregarAlCarrito('Torta de fresa', 3000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga (2).jpeg" alt="Torta clásica">
+    <h2>🍰 Torta clásica</h2>
+    <p>$20.000</p>
+    <button onclick="agregarAlCarrito('Torta clásica', 20000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga.jpeg" alt="Torta de chocolate">
+    <h2>🍫 Torta de chocolate</h2>
+    <p>$2.000</p>
+    <button onclick="agregarAlCarrito('Torta de chocolate', 2000)">Agregar al carrito</button>
+  </div>
+  <br>
+  <div class="producto">
+    <img src="imagenes/descarga (1).jpeg" alt="Torta de fresa">
+    <h2>🍓 Torta de fresa</h2>
+    <p>$3.000</p>
+    <button onclick="agregarAlCarrito('Torta de fresa', 3000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga (2).jpeg" alt="Torta clásica">
+    <h2>🍰 Torta clásica</h2>
+    <p>$20.000</p>
+    <button onclick="agregarAlCarrito('Torta clásica', 20000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga.jpeg" alt="Torta de chocolate">
+    <h2>🍫 Torta de chocolate</h2>
+    <p>$2.000</p>
+    <button onclick="agregarAlCarrito('Torta de chocolate', 2000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga (1).jpeg" alt="Torta de fresa">
+    <h2>🍓 Torta de fresa</h2>
+    <p>$3.000</p>
+    <button onclick="agregarAlCarrito('Torta de fresa', 3000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga (2).jpeg" alt="Torta clásica">
+    <h2>🍰 Torta clásica</h2>
+    <p>$20.000</p>
+    <button onclick="agregarAlCarrito('Torta clásica', 20000)">Agregar al carrito</button>
+  </div>
+  <br>
+  <div class="producto">
+    <img src="imagenes/descarga.jpeg" alt="Torta de chocolate">
+    <h2>🍫 Torta de chocolate</h2>
+    <p>$2.000</p>
+    <button onclick="agregarAlCarrito('Torta de chocolate', 2000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga (1).jpeg" alt="Torta de fresa">
+    <h2>🍓 Torta de fresa</h2>
+    <p>$3.000</p>
+    <button onclick="agregarAlCarrito('Torta de fresa', 3000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga (2).jpeg" alt="Torta clásica">
+    <h2>🍰 Torta clásica</h2>
+    <p>$20.000</p>
+    <button onclick="agregarAlCarrito('Torta clásica', 20000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga.jpeg" alt="Torta de chocolate">
+    <h2>🍫 Torta de chocolate</h2>
+    <p>$2.000</p>
+    <button onclick="agregarAlCarrito('Torta de chocolate', 2000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga (1).jpeg" alt="Torta de fresa">
+    <h2>🍓 Torta de fresa</h2>
+    <p>$3.000</p>
+    <button onclick="agregarAlCarrito('Torta de fresa', 3000)">Agregar al carrito</button>
+  </div>
+  <br>
+  <div class="producto">
+    <img src="imagenes/descarga (2).jpeg" alt="Torta clásica">
+    <h2>🍰 Torta clásica</h2>
+    <p>$20.000</p>
+    <button onclick="agregarAlCarrito('Torta clásica', 20000)">Agregar al carrito</button>
+  </div>
+
+  <div class="producto">
+    <img src="imagenes/descarga.jpeg" alt="Torta de chocolate">
+    <h2>🍫 Torta de chocolate</h2>
+    <p>$2.000</p>
+    <button onclick="agregarAlCarrito('Torta de chocolate', 2000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <img src="imagenes/descarga (1).jpeg" alt="Torta de fresa">
+    <h2>🍓 Torta de fresa</h2>
+    <p>$3.000</p>
+    <button onclick="agregarAlCarrito('Torta de fresa', 3000)">Agregar al carrito</button>
+  </div>
+
+  <div class="producto">
+    <img src="imagenes/descarga (2).jpeg" alt="Torta clásica">
+    <h2>🍰 Torta clásica</h2>
+    <p>$20.000</p>
+    <button onclick="agregarAlCarrito('Torta clásica', 20000)">Agregar al carrito</button>
+  </div>
+
+  <div class="producto">
+    <img src="imagenes/descarga.jpeg" alt="Torta de chocolate">
+    <h2>🍫 Torta de chocolate</h2>
+    <p>$2.000</p>
+    <button onclick="agregarAlCarrito('Torta de chocolate', 2000)">Agregar al carrito</button>
+  </div>
+
+  <div id="carrito">
+    <h2>🛒 Carrito de compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p><strong>Total:</strong> $<span id="total">0</span></p>
+  </div>
+
+  <button onclick="enviarPedido()" style="
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  ">
+    Enviar pedido por WhatsApp
+  </button>
+
+  <a class="whatsapp-btn" href="https://wa.me/56912345678?text=Hola%2C%20vi%20tu%20cat%C3%A1logo%20y%20me%20gustar%C3%ADa%20hacer%20un%20pedido" target="_blank">
+    WhatsApp
+  </a>
+
+  <a href="index.html" style="
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #000000;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  ">
+    ↑ Inicio
+  </a>
+
+  <script>
+    let total = 0;
+    const lista = document.getElementById('lista-carrito');
+    const totalEl = document.getElementById('total');
+    const carrito = {};
+
+    function agregarAlCarrito(producto, precio) {
+      if (carrito[producto]) {
+        carrito[producto].cantidad += 1;
+        carrito[producto].elemento.querySelector('.cantidad').textContent = 'x' + carrito[producto].cantidad;
+      } else {
+        const li = document.createElement('li');
+        li.innerHTML = `${producto} <span class="cantidad">x1</span> - $${precio.toLocaleString('es-CL')}`;
+
+        const btnQuitar = document.createElement('button');
+        btnQuitar.textContent = '🗑️';
+        btnQuitar.title = 'Eliminar del carrito';
+        btnQuitar.onclick = () => {
+          total -= carrito[producto].cantidad * precio;
+          totalEl.textContent = total.toLocaleString('es-CL');
+          li.remove();
+          delete carrito[producto];
+        };
+
+        li.appendChild(btnQuitar);
+        lista.appendChild(li);
+
+        carrito[producto] = {
+          cantidad: 1,
+          elemento: li
+        };
+      }
+
+      total += precio;
+      totalEl.textContent = total.toLocaleString('es-CL');
+    }
+
+    function enviarPedido() {
+      if (Object.keys(carrito).length === 0) {
+        alert("Tu carrito está vacío.");
+        return;
+      }
+
+      let mensaje = "Hola, quiero hacer un pedido:%0A";
+      for (let producto in carrito) {
+        mensaje += `- ${producto} x${carrito[producto].cantidad}%0A`;
+      }
+      mensaje += `%0ATotal: $${total.toLocaleString('es-CL')}`;
+
+      const telefono = "5691234578";
+      const url = `https://wa.me/${telefono}?text=${mensaje}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>
